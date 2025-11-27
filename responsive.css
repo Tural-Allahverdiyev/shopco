@@ -1,3 +1,4 @@
+/* 1024px və aşağı */
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 50px;
@@ -5,18 +6,48 @@
   .stat-number {
     font-size: 36px;
   }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+  }
+  .newsletter h2 {
+    font-size: 24px;
+    flex: none;
+  }
+  .newsletter-right {
+    align-items: center;
+    width: 100%;
+    text-align: center !important;
+  }
+  .newsletter-right button,
+  .input-wrapper {
+    max-width: 400px;
+    width: 100%;
+  }
+  .footer-main {
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 10px;
+  }
+  .brand {
+    max-width: 100%;
+  }
+  .socials {
+    justify-content: center;
+  }
 }
 
-/* 900px-dən aşağı (mobil görünüş) */
+/* 900px və aşağı (mobil görünüş) */
 @media (max-width: 900px) {
   .nav {
     display: none;
   }
-
   .search-input {
     display: none;
   }
-
   .search-btn {
     display: block;
     width: 18px;
@@ -24,18 +55,16 @@
     margin-right: -6px;
   }
 
-  /* Menyu və axtarışı gizlət */
   .header-container {
     justify-content: space-around;
     gap: 10px;
   }
 
   .hero-container {
-    grid-template-columns: 1fr; /* Tək sütun */
-    text-align: center; /* Ortala */
+    grid-template-columns: 1fr;
+    text-align: center;
     padding: 36px 16px 0;
   }
-
   .hero-content {
     align-items: center;
     margin-top: 0;
@@ -56,7 +85,6 @@
     margin-bottom: 20px;
   }
 
-  /* Sayğaclar ortalanır */
   .stats-inline {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
@@ -86,9 +114,19 @@
     top: 250px;
     animation-delay: 1s;
   }
+
+  /* Slider */
+  .sliderContent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .sliderCard {
+    width: 90%;
+    max-width: 400px;
+  }
 }
 
-/* 600px-dən aşağı (kiçik telefonlar) */
+/* 600px və aşağı */
 @media (max-width: 600px) {
   .hero-title {
     font-size: 32px;
@@ -116,188 +154,41 @@
   }
 }
 
-/* --- FOOTER & NEWSLETTER RESPONSIVE --- */
-
-/* 1024px-dən aşağı (planşet) */
-@media (max-width: 1024px) {
-  .newsletter {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 30px;
-  }
-
-  .newsletter h2 {
-    font-size: 24px;
-    flex: none;
-  }
-
-  .newsletter-right {
-    align-items: center;
-    width: 100%;
-    text-align: center !important;
-  }
-
-  .newsletter-right button,
-  .input-wrapper {
-    max-width: 400px;
-    width: 100%;
-  }
-
-  .footer-main {
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px 10px;
-  }
-
-  .brand {
-    max-width: 100%;
-  }
-
-  .socials {
-    justify-content: center;
-  }
-}
-
-/* 768px-dən aşağı (orta telefonlar) */
+/* 768px və aşağı (orta telefonlar) */
 @media (max-width: 768px) {
+  /* Newsletter & Footer */
   .newsletter {
     padding: 30px 20px;
     gap: 20px;
   }
-
   .newsletter h2 {
     font-size: 20px;
   }
-
   .input-wrapper input,
   .newsletter-right button {
     font-size: 14px;
     padding: 12px 14px;
   }
-
   .footer-main {
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding: 100px 10px 20px;
   }
-
   .footer-col {
     text-align: center;
     flex: 1 1 100%;
   }
-
   .footer-bottom {
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-
   .payments {
     justify-content: center;
   }
-}
 
-/* 480px və aşağı (kiçik telefonlar) */
-@media (max-width: 480px) {
-  .newsletter {
-    padding: 25px 15px;
-  }
-
-  .newsletter h2 {
-    font-size: 18px;
-  }
-
-  .input-wrapper input {
-    font-size: 13px;
-    padding: 10px 12px 10px 40px;
-  }
-
-  .newsletter-right button {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-
-  .footer-main {
-    padding: 90px 10px 10px;
-    gap: 20px;
-  }
-
-  .footer-bottom {
-    padding: 15px;
-  }
-
-  .footer-bottom p {
-    font-size: 12px;
-  }
-
-  .payments img {
-    width: 40px;
-  }
-}
-
-@media (max-width: 900px) {
-  .sliderContent {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .sliderCard {
-    width: 90%;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 500px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  .img {
-    height: 180px;
-  }
-}
-
-/* Planşet görünüşü (768px və aşağı) */
-@media (max-width: 768px) {
-  .dressStyle {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: none;
-    gap: 15px;
-  }
-
-  .dressCard {
-    height: 200px;
-  }
-
-  .dcName {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .dressStyle {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .dressCard {
-    height: 220px;
-  }
-
-  .dcName {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
+  /* Dress Style – horizontal scroll */
   .dressStyle {
     display: flex;
     overflow-x: auto;
@@ -305,47 +196,19 @@
     gap: 16px;
     padding-bottom: 10px;
   }
-
   .dressCard {
-    flex: 0 0 90%;
-    scroll-snap-align: start;
-    height: 250px;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-
-  .dcName {
-    font-size: 20px;
-  }
-
-  .dressStyle::-webkit-scrollbar {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
-  .dressStyle {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding-bottom: 10px;
-  }
-
-  .dressCard {
-    flex: 0 0 100%;
+    flex: 0 0 85%;
     scroll-snap-align: start;
     height: 300px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
   }
-
   .dressCard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
   .dcName {
     position: absolute;
     top: 5px;
@@ -358,7 +221,59 @@
     border-radius: 8px;
   }
 
-  scrollbar-ı gizlət .dressStyle::-webkit-scrollbar {
+  /* scrollbar-ı gizlət */
+  .dressStyle::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* 500px və aşağı */
+@media (max-width: 500px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .card {
+    width: 100%;
+  }
+  .img {
+    height: 180px;
+  }
+}
+
+/* 480px və aşağı (kiçik telefonlar) */
+@media (max-width: 480px) {
+  .newsletter {
+    padding: 25px 15px;
+  }
+  .newsletter h2 {
+    font-size: 18px;
+  }
+  .input-wrapper input {
+    font-size: 13px;
+    padding: 10px 12px 10px 40px;
+  }
+  .newsletter-right button {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .footer-main {
+    padding: 90px 10px 10px;
+    gap: 20px;
+  }
+  .footer-bottom {
+    padding: 15px;
+  }
+  .footer-bottom p {
+    font-size: 12px;
+  }
+  .payments img {
+    width: 40px;
+  }
+
+  /* Dress Card height */
+  .dressCard {
+    height: 220px;
   }
 }

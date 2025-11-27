@@ -1,21 +1,38 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* VARIABLES */
 :root {
   --bg: #f3f3f3;
   --text: #0b0b0b;
   --muted: #6a6a6a;
   --line: #e9e9e9;
-}
-.body {
-  font-family: Inter, Arial, sans-serif;
-  /* background: var(--bg); */
-  color: var(--text);
+
+  --card-bg: #f0f0f0;
+  --star-color: #ffc633;
+  --check-color: #01ab31;
+  --text-color: #000;
 }
 
-/*Promo bar*/
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* PROMO BAR */
 .promo-bar {
   position: relative;
   background: #000;
@@ -42,7 +59,7 @@
   opacity: 0.75;
 }
 
-/*Header*/
+/* HEADER */
 .header {
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
@@ -55,19 +72,23 @@
   margin: 0 auto;
   padding: 16px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 .logo {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 24px;
 }
 .nav {
   display: flex;
+  align-items: center;
   gap: 18px;
 }
 .nav-link,
 .dropdown-btn {
+  text-decoration: none;
+  color: #000;
   font-size: 14px;
   background: none;
   border: none;
@@ -78,6 +99,8 @@
 .nav-link:hover,
 .dropdown-btn:hover {
   background: #f2f2f2;
+  text-decoration: none;
+  color: #000;
 }
 .search {
   position: relative;
@@ -118,7 +141,7 @@
   cursor: pointer;
 }
 
-/* Dropdown */
+/* DROPDOWN */
 .dropdown {
   position: relative;
 }
@@ -148,15 +171,15 @@
   transition: all 0.2s ease;
 }
 .dropdown-link:hover {
-  background: #000; /* hover zamanı qara fon */
-  color: #fff; /* ağ yazı */
+  background: #000;
+  color: #fff;
   border-color: #000;
 }
 .dropdown.active .dropdown-menu {
   display: flex;
 }
 
-/*HERO*/
+/* HERO */
 .hero {
   background: var(--bg);
   border-bottom: 1px solid var(--line);
@@ -170,8 +193,6 @@
   gap: 28px;
   align-items: start;
 }
-
-/* Sol tərəf – mətn hissə */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -209,7 +230,7 @@
   background: #333;
 }
 
-/* Sayğaclar*/
+/* HERO STATS */
 .stats-inline {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
@@ -228,8 +249,6 @@
   font-size: 14px;
   margin-top: 6px;
 }
-
-/* incə vertikal ayırıcılar (yalnız geniş ekranlarda) */
 .stats-inline > .stat-card:not(:last-child) {
   position: relative;
   padding-right: 28px;
@@ -244,7 +263,7 @@
   background: #e3e3e3;
 }
 
-/* Sağ tərəf – şəkil */
+/* HERO IMAGE */
 .hero-image-box {
   position: relative;
   width: 100%;
@@ -287,7 +306,7 @@
   }
 }
 
-/* Brands */
+/* BRANDS */
 .brands {
   background: #000;
   color: #fff;
@@ -300,8 +319,6 @@
   flex-wrap: wrap;
   gap: 40px;
 }
-
-/* Hər bir loqo üçün limit qoyuruq ki, sıralar bərabər olsun */
 .brand-logo {
   height: 40px;
   width: auto;
@@ -312,33 +329,25 @@
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
-
-/* Hover effekti */
 .brand-logo:hover {
   opacity: 1;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-}
-
+/* PRODUCT LISTS */
 .section-title {
   text-align: center;
   font-size: 32px;
   font-weight: 800;
   margin: 40px 0;
 }
-
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 20px; /* Kartlar arasındakı məsafə */
+  gap: 20px;
   justify-content: center;
-  max-width: 1000px; /* Bütün sıraların genişliyini məhdudlaşdırır */
-  margin: 0 auto; /* Ortada yerləşdirir */
+  max-width: 1000px;
+  margin: 0 auto;
 }
-
 .card {
   width: 230px;
   background: #fff;
@@ -346,7 +355,6 @@ body {
   text-align: center;
   padding: 5px;
 }
-
 .img {
   width: 100%;
   height: 250px;
@@ -354,12 +362,10 @@ body {
   border-radius: 10px;
   margin-bottom: 12px;
 }
-
 .btn-wrap {
   text-align: center;
   margin: 25px 0 50px;
 }
-
 .view-all {
   background: #fff;
   border: 1px solid #ccc;
@@ -368,7 +374,6 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
-
 .hidden {
   display: none !important;
 }
@@ -377,14 +382,12 @@ body {
   font-weight: bold;
   color: #000;
 }
-
 .old-price {
   font-size: 15px;
   text-decoration: line-through;
   color: gray;
   margin-left: 5px;
 }
-
 .discount {
   display: inline-block;
   background: #ffe6e6;
@@ -405,13 +408,6 @@ body {
   margin-left: 4px;
 }
 
-:root {
-  --card-bg: #f0f0f0;
-  --star-color: #ffc633;
-  --check-color: #01ab31;
-  --text-color: #000;
-}
-
 /* DRESS STYLE */
 .dressStylePage {
   width: 100%;
@@ -420,13 +416,11 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 .dressStyleCon {
   width: 100%;
   background-color: var(--card-bg);
   border-radius: 20px;
 }
-
 .dressStyleHeader {
   text-align: center;
   font-size: 48px;
@@ -434,7 +428,6 @@ body {
   text-transform: uppercase;
   padding: 30px 0 10px;
 }
-
 .dressStyle {
   display: grid;
   gap: 18px;
@@ -445,7 +438,6 @@ body {
     "casual formal formal"
     "party  party  gym";
 }
-
 .dressCard {
   position: relative;
   border-radius: 15px;
@@ -454,7 +446,6 @@ body {
   transition: all 0.4s ease-in-out;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
-
 .dressCard1 {
   grid-area: casual;
 }
@@ -467,20 +458,17 @@ body {
 .dressCard4 {
   grid-area: gym;
 }
-
 .dressCard img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center; /* 💥 şəkil sağda yerləşir */
+  object-position: right center;
   transition: transform 0.4s ease-in-out;
 }
-
 .dressCard:hover {
   transform: scale(0.96);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
-
 .dcName {
   position: absolute;
   top: 15px;
@@ -496,7 +484,6 @@ body {
   width: 100%;
   padding: 50px;
 }
-
 .sliderHeader {
   display: flex;
   justify-content: space-between;
@@ -504,12 +491,10 @@ body {
   font-size: 48px;
   font-weight: 700;
 }
-
 .sliderHeaderArrows {
   display: none;
   gap: 15px;
 }
-
 .sliderHeaderArrows p {
   background-color: var(--card-bg);
   padding: 8px;
@@ -517,18 +502,15 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .sliderHeaderArrows p:hover {
   background-color: #b8b6b6;
 }
-
 .sliderContent {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   padding-top: 30px;
 }
-
 .sliderCard {
   width: calc(100% / 3);
   padding: 20px;
@@ -537,20 +519,16 @@ body {
   background: #fff;
   transition: 0.4s ease-in-out;
 }
-
 .sliderCard.active {
   transform: scale(1.05);
 }
-
-.sliderHeaderText{
+.sliderHeaderText {
   text-align: center;
 }
-
 .userFeadBack {
   color: var(--star-color);
   margin-bottom: 10px;
 }
-
 .userName {
   display: flex;
   align-items: center;
@@ -558,21 +536,12 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-
 .userName ion-icon {
   color: var(--check-color);
 }
 
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #fff;
-  color: #111;
-  line-height: 1.5;
-}
-
-/* NEWSLETTER SECTION */
-.footer{
+/* FOOTER + NEWSLETTER */
+.footer {
   background-color: white;
 }
 .newsletter {
@@ -598,7 +567,6 @@ body {
   margin: 0;
   line-height: 1.3;
 }
-
 .newsletter-right {
   display: flex;
   flex-direction: column;
@@ -607,7 +575,6 @@ body {
   flex: 1 1 45%;
   min-width: 280px;
 }
-
 .newsletter-form {
   display: flex;
   align-items: center;
@@ -616,13 +583,11 @@ body {
   max-width: 560px;
   width: 100%;
 }
-
 .input-wrapper {
   position: relative;
   width: 100%;
   max-width: 300px;
 }
-
 .input-wrapper img {
   position: absolute;
   left: 14px;
@@ -634,7 +599,6 @@ body {
   z-index: 5;
   pointer-events: none;
 }
-
 .input-wrapper input {
   width: 100%;
   padding: 14px 16px 14px 10px;
@@ -649,7 +613,6 @@ body {
   z-index: 1;
   text-align: center;
 }
-
 .newsletter-right button {
   width: 100%;
   max-width: 300px;
@@ -664,7 +627,6 @@ body {
   transition: background 0.3s ease, transform 0.2s ease;
   box-sizing: border-box;
 }
-
 .newsletter-right button:hover {
   background: #ddd;
   transform: translateY(-2px);
@@ -679,69 +641,58 @@ body {
   padding: 120px 20px 10px;
   gap: 2rem;
 }
-
 .footer-col {
   flex: 1 1 180px;
   min-width: 180px;
 }
-
 .footer-col h4 {
   font-size: 1rem;
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
 }
-
 .footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-col ul li {
   margin-bottom: 0.6rem;
 }
-
 .footer-col ul li a {
   color: #333;
   text-decoration: none;
   transition: color 0.3s;
   font-size: 0.95rem;
 }
-
 .footer-col ul li a:hover {
   color: #000;
   font-weight: 500;
 }
 
-/* BRAND SECTION */
+/* FOOTER BRAND COLUMN */
 .brand {
   flex: 2 1 250px;
   max-width: 280px;
 }
-
 .brand h3 {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1rem;
 }
-
 .brand p {
   line-height: 1.6;
   color: #555;
 }
-
 .socials {
   margin-top: 1.2rem;
   display: flex;
   gap: 0.8rem;
 }
-
 .socials a {
   color: #111;
   font-size: 1.2rem;
   transition: transform 0.3s, color 0.3s;
 }
-
 .socials a:hover {
   transform: scale(1.2);
   color: #555;
@@ -758,36 +709,29 @@ body {
   align-items: center;
   gap: 1rem;
 }
-
 .footer-bottom p {
   margin: 0;
   font-size: 0.9rem;
   color: #777;
 }
-
 .payments {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .payments img {
   width: 50px;
-  /* height: 30px; */
   transition: filter 0.3s;
 }
-
 .payments img:hover {
-  transform: scale(1);
   cursor: pointer;
 }
 
-.natig {
+/* SIMPLE BACKGROUND HELPERS */
+.dressStyle_container {
   background-color: white;
 }
-
-
-.container_two{
+.container_two {
   background-color: white;
 }
